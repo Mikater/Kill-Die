@@ -800,10 +800,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1866925673}
   - component: {fileID: 1866925672}
+  - component: {fileID: 1866925676}
   - component: {fileID: 1866925671}
+  - component: {fileID: 1866925674}
+  - component: {fileID: 1866925675}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -896,6 +899,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1866925674
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866925670}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.036344588, y: -0.084804416}
+  serializedVersion: 2
+  m_Radius: 0.26291567
+--- !u!95 &1866925675
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866925670}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3894186143aaa34faa2e094ad94e58f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1866925676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866925670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2eb0dcf6be1b74e9d395a539aaeac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 100
+  anim: {fileID: 1866925675}
 --- !u!1001 &4335340458843059589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -966,6 +1020,18 @@ PrefabInstance:
     - target: {fileID: 4335340457208011603, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
       propertyPath: dashSpeed
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335340457208011603, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
+      propertyPath: damageDiapazone.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335340457208011603, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
+      propertyPath: damageDiapazone.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335340457208011603, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
+      propertyPath: damageDiapazone.Array.data[1]
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4335340457208011604, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
       propertyPath: m_Name

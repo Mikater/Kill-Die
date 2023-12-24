@@ -1,32 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Individual")]
     public float speed = 1;
     public float dashForce = 2;
 
     public Rigidbody2D rb;
     public Animator anim;
 
+    [Header("Joystick")]
     public FixedJoystick joystick;
 
     Vector2 Movement;
     Vector2 directionToEnemy;
 
+    [Header("Dash")]
     public float dashSpeed;
     public float dashTime;
     private bool isDashing;
-
+    [Header("Atack")]
+    public float detectionRadius = 2;
     public GameObject enemy;
-    // Start is called before the first frame update
+    public int[] damageDiapazone;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         // input
@@ -50,8 +55,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing)
         {
-            //StartCoroutine(Dash());
-            StartCoroutine(Atack());
+            if(CheckEnemy())
+                StartCoroutine(Atack());
+            else
+                StartCoroutine(Dash());
         }
     }
 
@@ -81,8 +88,26 @@ public class PlayerMovement : MonoBehaviour
         isDashing = true;
 
         anim.SetTrigger("Atack");
+        enemy.GetComponent<Enemy1>().GetDamage(Random.Range(damageDiapazone[0], damageDiapazone[1]));
         yield return new WaitForSeconds(0.1f);
+
+        //Обнулення
+        enemy = null;
         Movement = Vector2.zero;
         isDashing = false;
+    }
+
+    private bool CheckEnemy()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
+        foreach (Collider2D collider in colliders)
+        {
+            if (collider.CompareTag("Enemy")) 
+            {
+                enemy = collider.gameObject;
+                return true;
+            }
+        }
+        return false;
     }
 }
