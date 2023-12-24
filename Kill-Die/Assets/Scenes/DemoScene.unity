@@ -157,9 +157,9 @@ RectTransform:
   m_Father: {fileID: 1348250671}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1328, y: 657}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 59, y: -57}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &156154590
@@ -612,7 +612,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1643867862}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Dash
+        m_MethodName: AtackButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -842,9 +842,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4335340457208011603, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
+      propertyPath: dashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335340457208011603, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1201356938}
+    - target: {fileID: 4335340457208011603, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4335340457208011604, guid: bbf5e3e564687af459e619b4530102c0, type: 3}
       propertyPath: m_Name
       value: Player

@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 Movement;
 
+    public float dashSpeed;
+    public float dashTime;
+    private bool isDashing;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,14 +41,28 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", Movement.y);
     }
 
-    public void Dash()
+    public void AtackButtonClick()
     {
-        rb.AddForce(Movement * dashForce, ForceMode2D.Impulse);
+        if (!isDashing)
+        {
+            StartCoroutine(Dash());
+        }
     }
 
     private void FixedUpdate()
     {
         // Movement
-        rb.MovePosition(rb.position + Movement * speed * Time.fixedDeltaTime);
+        if(!isDashing)
+            rb.MovePosition(rb.position + Movement * speed * Time.fixedDeltaTime);
+        else
+            rb.MovePosition(rb.position + Movement * dashSpeed * Time.fixedDeltaTime);
+    }
+
+    IEnumerator Dash()
+    {
+        anim.SetTrigger("Dash");
+        isDashing = true;
+        yield return new WaitForSeconds(dashTime);
+        isDashing = false;
     }
 }
