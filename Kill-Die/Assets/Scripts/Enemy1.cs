@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy1 : MonoBehaviour
 {
     public int HP;
     public Animator anim;
+
+    public GameObject damageViz;
 
     // Start is called before the first frame update
     void Start()
@@ -22,16 +26,20 @@ public class Enemy1 : MonoBehaviour
     public void GetDamage(int damage)
     {
         HP -= damage;
-        VizualizateDamage();
+        VizualizateDamage(damage);
         if (HP < 0)
             StartCoroutine(Death());
         else
             anim.SetTrigger("Hit");
     }
 
-    void VizualizateDamage()
+    void VizualizateDamage(int damage)
     {
-        return;
+        GameObject damageText = Instantiate(damageViz, transform.position, Quaternion.identity);
+        damageText.GetComponentInChildren<TextMeshProUGUI>().text = damage.ToString();
+        damageText.GetComponent<Rigidbody2D>().velocity = transform.up * 10f;
+        // Задаємо анімацію зникнення
+        Destroy(damageText, 0.2f);
     }
 
     IEnumerator Death()

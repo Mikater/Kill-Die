@@ -950,6 +950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   anim: {fileID: 1866925675}
+  damageViz: {fileID: 5579326574765580705, guid: b87e64ebd28b4a849a08deccee447d36, type: 3}
 --- !u!1001 &4335340458843059589
 PrefabInstance:
   m_ObjectHideFlags: 0
