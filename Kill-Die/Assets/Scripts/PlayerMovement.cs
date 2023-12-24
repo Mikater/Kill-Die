@@ -13,11 +13,13 @@ public class PlayerMovement : MonoBehaviour
     public FixedJoystick joystick;
 
     Vector2 Movement;
+    Vector2 directionToEnemy;
 
     public float dashSpeed;
     public float dashTime;
     private bool isDashing;
 
+    public GameObject enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +30,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // input
-        Movement.x = Input.GetAxisRaw("Horizontal");
-        Movement.y = Input.GetAxisRaw("Vertical");
+        if (!isDashing)
+        {
+            Movement.x = Input.GetAxisRaw("Horizontal");
+            Movement.y = Input.GetAxisRaw("Vertical");
+        }
         //Movement = joystick.Direction;
 
         if (Movement.sqrMagnitude > 0.01)
@@ -45,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isDashing)
         {
-            StartCoroutine(Dash());
+            //StartCoroutine(Dash());
+            StartCoroutine(Atack());
         }
     }
 
@@ -63,6 +69,20 @@ public class PlayerMovement : MonoBehaviour
         anim.SetTrigger("Dash");
         isDashing = true;
         yield return new WaitForSeconds(dashTime);
+        isDashing = false;
+    }
+
+    IEnumerator Atack()
+    {
+        // Беремо напрям до енемі
+        directionToEnemy = enemy.transform.position - transform.position;
+        // стрибок
+        Movement = directionToEnemy.normalized;
+        isDashing = true;
+
+        anim.SetTrigger("Atack");
+        yield return new WaitForSeconds(0.1f);
+        Movement = Vector2.zero;
         isDashing = false;
     }
 }
