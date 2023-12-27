@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 749463752045931426}
   - component: {fileID: 7136552712436987685}
+  - component: {fileID: 3710459680511090336}
   m_Layer: 0
   m_Name: Roks (3)
   m_TagString: Untagged
@@ -84,3 +85,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &3710459680511090336
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018576848759806}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.41, y: 0.21}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.0005284976, y: 0.10555995}
+      - {x: -0.14824013, y: 0.07169916}
+      - {x: -0.1808374, y: 0.05255116}
+      - {x: -0.19584225, y: 0.03419672}
+      - {x: -0.20956425, y: 0.009553436}
+      - {x: -0.16587153, y: -0.033354454}
+      - {x: -0.12586176, y: -0.08002437}
+      - {x: -0.030392494, y: -0.08651374}
+      - {x: 0.021948516, y: -0.10468116}
+      - {x: 0.12658492, y: -0.09938601}
+      - {x: 0.17666505, y: -0.05005361}
+      - {x: 0.20999514, y: -0.015048735}
+      - {x: 0.1825219, y: 0.027556036}
+      - {x: 0.13393065, y: 0.07039381}
+      - {x: 0.08089588, y: 0.105832525}

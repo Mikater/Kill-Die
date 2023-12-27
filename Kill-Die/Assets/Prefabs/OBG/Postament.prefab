@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5937836114883012493}
   - component: {fileID: 8132232629206189235}
   - component: {fileID: 1103543076116473596}
+  - component: {fileID: 5925435912680103098}
   m_Layer: 0
   m_Name: Postament
   m_TagString: Untagged
@@ -106,3 +107,34 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!68 &5925435912680103098
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2345064294724803777}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.47587556, y: -0.97782093}
+  - {x: 0.4746701, y: -0.65584534}
+  - {x: 0.9357507, y: -0.20301461}
+  - {x: 0.9388745, y: 0.50892115}
+  - {x: 0.4604252, y: 0.9779885}
+  - {x: -0.47137028, y: 0.98299}
+  - {x: -0.6946522, y: 0.7445393}
+  - {x: -0.9313329, y: 0.5140617}
+  - {x: -0.93823975, y: -0.18923473}
+  - {x: -0.47306144, y: -0.65526205}
+  - {x: -0.4782132, y: -0.9541214}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

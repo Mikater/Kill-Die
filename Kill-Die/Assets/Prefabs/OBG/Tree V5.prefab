@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5461797227949334088}
   - component: {fileID: 5998004735878868651}
+  - component: {fileID: 2216005168188493193}
   m_Layer: 0
   m_Name: Tree V5
   m_TagString: Untagged
@@ -84,3 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &2216005168188493193
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183234447110835008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00096562953, y: -0.24417965}
+  serializedVersion: 2
+  m_Radius: 0.012423469

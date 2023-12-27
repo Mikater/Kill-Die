@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1512560749808707901}
   - component: {fileID: 9067181093230000489}
   - component: {fileID: 7572689282259441369}
+  - component: {fileID: 1593412545136843988}
   m_Layer: 0
   m_Name: Fontan
   m_TagString: Untagged
@@ -106,3 +107,47 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &1593412545136843988
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4554947482106170210}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.23, y: 1.19}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.28140804, y: -0.3521611}
+      - {x: 0.3237482, y: -0.3103782}
+      - {x: 0.37385833, y: -0.26483488}
+      - {x: 0.45711833, y: -0.18146482}
+      - {x: 0.56597656, y: -0.06369317}
+      - {x: 0.56152, y: 0.14717329}
+      - {x: 0.48266155, y: 0.24048826}
+      - {x: 0.15597656, y: 0.56825995}
+      - {x: -0.119181454, y: 0.57717323}
+      - {x: -0.20032316, y: 0.518315}
+      - {x: -0.27374822, y: 0.4494017}
+      - {x: -0.49581137, y: 0.22951171}
+      - {x: -0.5659766, y: 0.1527166}
+      - {x: -0.5592916, y: -0.07374823}
+      - {x: -0.22820492, y: -0.39814988}
+      - {x: -0.11043325, y: -0.5281498}
+      - {x: 0.10266157, y: -0.52814984}
+      - {x: 0.21396838, y: -0.4313548}
+      - {x: 0.21494494, y: -0.42483488}

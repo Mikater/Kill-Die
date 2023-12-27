@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6404547317828554368}
   - component: {fileID: 3483847874318570780}
+  - component: {fileID: 3967620622516446026}
   m_Layer: 0
   m_Name: Ruins V5
   m_TagString: Untagged
@@ -84,3 +85,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &3967620622516446026
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7665425759904263540}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9, y: 0.48}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.26402566, y: 0.10728464}
+      - {x: -0.02, y: 0.19047953}
+      - {x: -0.22977698, y: 0.23520769}
+      - {x: -0.42124614, y: 0.13083076}
+      - {x: -0.44566348, y: 0.107868694}
+      - {x: -0.44680512, y: -0.08083078}
+      - {x: -0.364441, y: -0.11402564}
+      - {x: -0.15264472, y: -0.1421473}
+      - {x: -0.015623076, y: -0.18444104}
+      - {x: 0.12118202, y: -0.21444109}
+      - {x: 0.21332487, y: -0.24310435}
+      - {x: 0.30361018, y: -0.22722052}
+      - {x: 0.398818, y: -0.17444104}
+      - {x: 0.45, y: -0.16}
+      - {x: 0.44680518, y: 0.051661577}
