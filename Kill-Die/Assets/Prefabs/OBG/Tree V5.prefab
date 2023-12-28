@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5461797227949334088}
   - component: {fileID: 5998004735878868651}
   - component: {fileID: 2216005168188493193}
+  - component: {fileID: -5958991235553042756}
+  - component: {fileID: 7834307398827843668}
   m_Layer: 0
   m_Name: Tree V5
   m_TagString: Untagged
@@ -73,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_Sprite: {fileID: -1918900854, guid: 03a70491cef5b684e898023759242e2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,3 +103,41 @@ CircleCollider2D:
   m_Offset: {x: -0.00096562953, y: -0.24417965}
   serializedVersion: 2
   m_Radius: 0.012423469
+--- !u!61 &-5958991235553042756
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183234447110835008}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.28, y: 0.51}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.28, y: 0.51}
+  m_EdgeRadius: 0
+--- !u!114 &7834307398827843668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183234447110835008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a676d0c36d2ecd44c811158809209b35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
