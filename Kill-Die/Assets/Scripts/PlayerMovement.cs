@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.Experimental.Rendering.Universal;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -22,53 +22,69 @@ public class PlayerMovement : MonoBehaviour
     public float dashSpeed;
     public float dashTime;
     private bool isDashing;
-    [Header("Atack")]
+
+    [Header("Attack")]
     public float detectionRadius = 2;
     public GameObject enemy;
     public int[] damageDiapazone;
 
-    void Start()
-    {
-        
-    }
+    [Header("Light")]
+    public Light2D playerLight;
 
     void Update()
     {
-        // input
         if (!isDashing)
         {
             Movement.x = Input.GetAxisRaw("Horizontal");
             Movement.y = Input.GetAxisRaw("Vertical");
         }
-        //Movement = joystick.Direction;
 
         if (Movement.sqrMagnitude > 0.01)
+        {
             anim.SetBool("Run", true);
+
+            // Обчислення кута обертання світла
+            float angle = Mathf.Atan2(Movement.y, Movement.x) * Mathf.Rad2Deg;
+
+            // Оптимізація для правильного обертання усіх напрямків
+            angle -= 90f;
+
+            playerLight.transform.rotation = Quaternion.Slerp(playerLight.transform.rotation, Quaternion.Euler(0, 0, angle), Time.deltaTime * 5f);
+        }
         else
+        {
             anim.SetBool("Run", false);
+        }
 
         anim.SetFloat("Horizontal", Movement.x);
         anim.SetFloat("Vertical", Movement.y);
     }
 
-    public void AtackButtonClick()
+    private void FixedUpdate()
     {
         if (!isDashing)
         {
-            if(CheckEnemy())
-                StartCoroutine(Atack());
-            else
-                StartCoroutine(Dash());
+            rb.MovePosition(rb.position + Movement * speed * Time.fixedDeltaTime);
+        }
+        else
+        {
+            rb.MovePosition(rb.position + Movement * dashSpeed * Time.fixedDeltaTime);
         }
     }
 
-    private void FixedUpdate()
+    public void AttackButtonClick()
     {
-        // Movement
-        if(!isDashing)
-            rb.MovePosition(rb.position + Movement * speed * Time.fixedDeltaTime);
-        else
-            rb.MovePosition(rb.position + Movement * dashSpeed * Time.fixedDeltaTime);
+        if (!isDashing)
+        {
+            if (CheckEnemy())
+            {
+                StartCoroutine(Attack());
+            }
+            else
+            {
+                StartCoroutine(Dash());
+            }
+        }
     }
 
     IEnumerator Dash()
@@ -79,19 +95,16 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
     }
 
-    IEnumerator Atack()
+    IEnumerator Attack()
     {
-        // ������ ������ �� ����
         directionToEnemy = enemy.transform.position - transform.position;
-        // �������
         Movement = directionToEnemy.normalized;
         isDashing = true;
 
-        anim.SetTrigger("Atack");
+        anim.SetTrigger("Attack");
         enemy.GetComponent<Enemy1>().GetDamage(Random.Range(damageDiapazone[0], damageDiapazone[1]));
         yield return new WaitForSeconds(0.1f);
 
-        //���������
         enemy = null;
         Movement = Vector2.zero;
         isDashing = false;
@@ -102,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRadius);
         foreach (Collider2D collider in colliders)
         {
-            if (collider.CompareTag("Enemy")) 
+            if (collider.CompareTag("Enemy"))
             {
                 enemy = collider.gameObject;
                 return true;
